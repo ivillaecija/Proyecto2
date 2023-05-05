@@ -25,8 +25,8 @@ insert into Jugador values (1, 'Jugador1');
 insert into Jugador values (2, 'Jugador2');
 
 -- Batalla
-insert into Batalla values(1,1,1,2,'Katana',40, 30);
-insert into Batalla values(2,2,3,1,'Destral de dues mans',50,40);
+insert into Batalla values(1,1,1,2,'Katana',40, 30, 1000);
+insert into Batalla values(2,2,3,1,'Destral de dues mans',50,40,1000);
 
 -- Ronda
 insert into Ronda values(1,1,1,10,10);

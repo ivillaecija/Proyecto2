@@ -1,4 +1,3 @@
-drop database batalla;
 create database if not exists batalla;
 use batalla;
 create table Personatge (

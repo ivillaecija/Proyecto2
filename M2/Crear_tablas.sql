@@ -7,6 +7,7 @@ create table Personatge (
     nom varchar(30) not null,
     vida int not null,
     forca int not null,
+    defensa int not null,
     agilitat int not null,
     velocitat int not null,
     check (raca in ('Huma', 'Elf', 'Nan'))

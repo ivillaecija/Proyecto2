@@ -1,3 +1,4 @@
+drop database batalla;
 create database if not exists batalla;
 use batalla;
 create table Personatge (
@@ -12,8 +13,7 @@ create table Personatge (
 );
 
 create table Arma (
-	id_arma int unsigned auto_increment primary key,
-    tipus varchar(30) not null,
+    tipus varchar(30) not null primary key,
     descripcio varchar(30),
     utilitat varchar(30),
     check(tipus in ('Daga', 'Espasa', 'Destral', 'Espases dobles', 'Simitarra', 
@@ -31,13 +31,13 @@ create table Batalla(
     id_jugador int unsigned,
     guerrer int unsigned,
     enemic int unsigned,
-	arma int unsigned,
+	arma varchar(30) not null,
     dany_realitzat int not null,
     dany_rebut int not null,
     constraint id_jugador foreign key (id_jugador) references Jugador(id_jugador),
     constraint guerrer foreign key (guerrer) references Personatge(id_personatge),
     constraint enemic foreign key (enemic) references Personatge(id_personatge),
-    constraint arma foreign key (arma) references Arma(id_arma)  
+    constraint arma foreign key (arma) references Arma(tipus)  
 );
 
 create table Ronda(

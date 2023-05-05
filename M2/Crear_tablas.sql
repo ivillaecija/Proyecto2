@@ -34,6 +34,7 @@ create table Batalla(
 	arma varchar(30) not null,
     dany_realitzat int not null,
     dany_rebut int not null,
+    puntuacio int not null,
     constraint id_jugador foreign key (id_jugador) references Jugador(id_jugador),
     constraint guerrer foreign key (guerrer) references Personatge(id_personatge),
     constraint enemic foreign key (enemic) references Personatge(id_personatge),

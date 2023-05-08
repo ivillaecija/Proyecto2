@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<battles>
+<battle id='1'>
+<player_id>1</player_id>
+<warrior_id>1</warrior_id>
+<warrior_weapon_id>1</warrior_weapon_id>
+<opponent_id>2</opponent_id>
+<opponent_weapon_id>1</opponent_weapon_id>
+<injuries_caused>40</injuries_caused>
+<injuries_suffered>30</injuries_suffered>
+<battle_points>100</battle_points>
+</battle>
+<battle id='2'>
+<player_id>2</player_id>
+<warrior_id>1</warrior_id>
+<warrior_weapon_id>2</warrior_weapon_id>
+<opponent_id>1</opponent_id>
+<opponent_weapon_id>1</opponent_weapon_id>
+<injuries_caused>30</injuries_caused>
+<injuries_suffered>20</injuries_suffered>
+<battle_points>103</battle_points>
+</battle>
+<battle id='3'>
+<player_id>3</player_id>
+<warrior_id>1</warrior_id>
+<warrior_weapon_id>4</warrior_weapon_id>
+<opponent_id>2</opponent_id>
+<opponent_weapon_id>7</opponent_weapon_id>
+<injuries_caused>30</injuries_caused>
+<injuries_suffered>40</injuries_suffered>
+<battle_points>230</battle_points>
+</battle>
+<battle id='4'>
+<player_id>1</player_id>
+<warrior_id>2</warrior_id>
+<warrior_weapon_id>2</warrior_weapon_id>
+<opponent_id>3</opponent_id>
+<opponent_weapon_id>9</opponent_weapon_id>
+<injuries_caused>30</injuries_caused>
+<injuries_suffered>10</injuries_suffered>
+<battle_points>86</battle_points>
+</battle>
+<battle id='5'>
+<player_id>2</player_id>
+<warrior_id>2</warrior_id>
+<warrior_weapon_id>7</warrior_weapon_id>
+<opponent_id>1</opponent_id>
+<opponent_weapon_id>1</opponent_weapon_id>
+<injuries_caused>40</injuries_caused>
+<injuries_suffered>15</injuries_suffered>
+<battle_points>71</battle_points>
+</battle>
+<battle id='6'>
+<player_id>3</player_id>
+<warrior_id>2</warrior_id>
+<warrior_weapon_id>8</warrior_weapon_id>
+<opponent_id>3</opponent_id>
+<opponent_weapon_id>8</opponent_weapon_id>
+<injuries_caused>10</injuries_caused>
+<injuries_suffered>20</injuries_suffered>
+<battle_points>45</battle_points>
+</battle>
+<battle id='7'>
+<player_id>1</player_id>
+<warrior_id>3</warrior_id>
+<warrior_weapon_id>9</warrior_weapon_id>
+<opponent_id>1</opponent_id>
+<opponent_weapon_id>1</opponent_weapon_id>
+<injuries_caused>12</injuries_caused>
+<injuries_suffered>30</injuries_suffered>
+<battle_points>130</battle_points>
+</battle>
+<battle id='8'>
+<player_id>2</player_id>
+<warrior_id>3</warrior_id>
+<warrior_weapon_id>8</warrior_weapon_id>
+<opponent_id>2</opponent_id>
+<opponent_weapon_id>7</opponent_weapon_id>
+<injuries_caused>39</injuries_caused>
+<injuries_suffered>35</injuries_suffered>
+<battle_points>240</battle_points>
+</battle>
+<battle id='9'>
+<player_id>3</player_id>
+<warrior_id>3</warrior_id>
+<warrior_weapon_id>2</warrior_weapon_id>
+<opponent_id>1</opponent_id>
+<opponent_weapon_id>1</opponent_weapon_id>
+<injuries_caused>30</injuries_caused>
+<injuries_suffered>10</injuries_suffered>
+<battle_points>12</battle_points>
+</battle>
+</battles>

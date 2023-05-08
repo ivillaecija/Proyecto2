@@ -1,3 +1,5 @@
+import os.path
+
 import mysql.connector
 
 # Crear conexion/cursor (cambiar parametros en caso de ser necesario)
@@ -9,8 +11,18 @@ cursor.execute("Select * from battle;")
 # Recorrer cursor a traves de la variable battle
 battle = cursor.fetchone()
 
+# Crear carpetas html y xml
+try:
+    try:
+        os.mkdir("xml")
+    except FileExistsError:
+        os.mkdir("html")
+    os.mkdir("html")
+except FileExistsError:
+    print()
+
 # Crear archivo battle.xml
-fichero = open("battle.xml", "w")
+fichero = open(os.path.join("xml","battle.xml"), "w")
 
 # Añadir las batallas al archivo
 fichero.write("<?xml version='1.0' encoding='UTF-8'?>\n")

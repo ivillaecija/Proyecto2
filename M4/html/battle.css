@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #bebebe;
+}
+
+.all {
+    margin-top: 30px;
+}
+
+.all .header h1 {
+    color: black;
+    text-align: center;
+}
+
+.all .battles h1 {
+    text-align: center;
+}
+
+.battles {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+footer {
+    text-align: center;
+    color: black;
+}
+
+.battle {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 20px auto;
+    background-color: white;
+    max-width: 400px;
+    height: auto;
+    width: 100%;
+}
+
+
+.battle table tr td {
+    padding: 15px;
+    font-weight: bold;
+}
+
+.battle table tr td:first-child {
+    background-color: black;
+    color: white;
+    display: table-cell;
+    width: 100%;
+}
+
+.battle table tr td:last-child {
+    background-color: black;
+    color: red;
+    text-align: right;
+}
+

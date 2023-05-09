@@ -1,7 +1,5 @@
 -- ESTO SÓN DATOS INVENTADOS DE PRUEBA
 
-delete from players;
-
 insert into players values(1, 'Izan');
 insert into players values(2, 'Joel');
 insert into players values(3, 'Bryan');

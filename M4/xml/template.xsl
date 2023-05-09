@@ -61,7 +61,7 @@
                     </xsl:element>
                 </xsl:element>
                  <xsl:element name="footer">
-                    <xsl:element name="p">© Izan Villaécija, Joel Martin and Brian </xsl:element>
+                    <xsl:element name="p">© Izan Villaécija, Joel Martin and Brian Uscata</xsl:element>
                 </xsl:element>
             </body>
         </html>

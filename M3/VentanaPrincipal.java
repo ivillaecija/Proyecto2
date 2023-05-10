@@ -2,6 +2,7 @@ package interficieGrafica;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.Action;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -26,6 +28,7 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import armas.Weapon;
 import connectionBBDD.*;
@@ -175,7 +178,8 @@ class mainWindow extends JFrame{
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					username = userTF.getText();
+					ConnectionBBDD con = new ConnectionBBDD();
+					username = con.username_validate(userTF.getText());
 					usuario.setName(username);
 					dispose();
 				}
@@ -497,10 +501,8 @@ class mainWindow extends JFrame{
 	
 	class viewRankingsWindow extends JFrame {
 		
-		private JPanel todo, superior, central, inferior;
+		private JPanel todo, superior, central, central2, central3, inferior;
 		private JLabel mensaje_error, player_name, global_points, defeated_enemies, injuries_caused, injuries_suffered;
-		private JLabel pn, gb, de, ic, is;
-		private JComboBox player;
 		private JButton mostrar;
 		private ArrayList<Ranking> players;
 		public viewRankingsWindow() {
@@ -510,7 +512,9 @@ class mainWindow extends JFrame{
 			todo.setLayout(new BoxLayout(todo, BoxLayout.Y_AXIS));
 			superior = new JPanel();
 			central = new JPanel();
-			central.setLayout(new GridLayout(2,5,10,10));
+			central2 = new JPanel();
+			central3 = new JPanel();
+			central.setLayout(new BoxLayout(central, BoxLayout.Y_AXIS));
 			inferior = new JPanel();
 			
 			mostrar = new JButton("VIEW RANKINGS");
@@ -521,36 +525,17 @@ class mainWindow extends JFrame{
 			injuries_suffered = new JLabel("Injuries Suffered");
 			mensaje_error = new JLabel("");
 			
-			pn = new JLabel("");
-			gb = new JLabel("");
-			de = new JLabel("");
-			ic = new JLabel("");
-			is = new JLabel("");
-			
 			ConnectionBBDD con = new ConnectionBBDD();
 			players = con.rankings();
-			player = new JComboBox();;
 			
-			for (int i=0;i<players.size();i++) {
-				player.addItem(players.get(i).getPlayer_name());
-			}
-			
-			superior.add(player);
 			superior.add(mostrar);
 			
-			//CAMPOS RANKINGS
-			central.add(player_name);
-			central.add(global_points);
-			central.add(defeated_enemies);
-			central.add(injuries_caused);
-			central.add(injuries_suffered);
-			
-			//VALORES RANKINGS
-			central.add(pn);
-			central.add(gb);
-			central.add(de);
-			central.add(ic);
-			central.add(is);
+			central2.add(player_name);
+			central2.add(global_points);
+			central2.add(defeated_enemies);
+			central2.add(injuries_caused);
+			central2.add(injuries_suffered);
+
 			
 			inferior.add(mensaje_error);
 			
@@ -565,25 +550,29 @@ class mainWindow extends JFrame{
 			mostrar.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					central.removeAll();
 					inferior.setVisible(false);
 					players.clear();
 					players = con.rankings();
-					if (player.getSelectedIndex() == -1) {
+					if (players.size() > 0) {
+						central.setLayout(new GridLayout(2,1,10,0));
+						central2.setLayout(new GridLayout(1,5,10,5));
+						central.add(central2);
+						for (int i=0;i<players.size();i++) {
+							central3.setLayout(new GridLayout(i+1,5,20,5));
+							central3.add(new JLabel(players.get(i).getPlayer_name()));
+							central3.add(new JLabel(Integer.toString(players.get(i).getGlobal_points(),JLabel.CENTER)));
+							central3.add(new JLabel(Integer.toString(players.get(i).getDefeated_enemies())));
+							central3.add(new JLabel(Integer.toString(players.get(i).getInjuries_caused())));
+							central3.add(new JLabel(Integer.toString(players.get(i).getInjuries_suffered())));
+						}
+						central.add(central3);
+						central.setVisible(true);
+					}
+					else {
 						mensaje_error.setText("Choose a player before trying to display rankings");
 						inferior.setBackground(Color.yellow);
 						inferior.setVisible(true);
-					}
-					else {
-						for (int i=0;i<players.size();i++) {
-							if (players.get(i).getPlayer_name().equals(player.getSelectedItem().toString())) {
-								pn.setText(players.get(i).getPlayer_name());
-								gb.setText(Integer.toString(players.get(i).getGlobal_points()));
-								de.setText(Integer.toString(players.get(i).getDefeated_enemies()));
-								ic.setText(Integer.toString(players.get(i).getInjuries_caused()));
-								is.setText(Integer.toString(players.get(i).getInjuries_suffered()));
-							}
-						}
-						central.setVisible(true);
 					}
 				}
 			});	
@@ -592,12 +581,8 @@ class mainWindow extends JFrame{
 			this.setTitle("Rankings");
 			this.setResizable(false);
 			this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-			Toolkit pantalla = Toolkit.getDefaultToolkit();
-			Dimension grandaria = pantalla.getScreenSize();
-			int ancho = grandaria.width; // ancho pantalla
-			int alto = grandaria.height; // alto pantalla
-			this.setLocation(((ancho/2)-(this.getWidth()/2))+500,((alto/2)-(this.getHeight()/2)));
-			this.setSize(800, 200);
+			this.setSize(800, 500);
+			this.setLocationRelativeTo(null);;;
 			this.setVisible(true);
 		}
 	}

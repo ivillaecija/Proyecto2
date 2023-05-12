@@ -56,7 +56,7 @@ create table BATTLE_ROUNDS(
 	injuries_caused int not null,
 	injuries_suffered int not null,
 
-	foreing key (battle_id) references battle(battle_id)
+	foreign key (battle_id) references battle(battle_id),
 	foreign key (player_id) references players(player_id),
 	foreign key (warrior_id) references warriors(warrior_id),
 	foreign key (warrior_weapon_id) references weapons(weapon_id),

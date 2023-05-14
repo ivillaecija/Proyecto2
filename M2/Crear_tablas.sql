@@ -46,7 +46,7 @@ create table battle (
 );
 
 create table BATTLE_ROUNDS(
-	battle_rounds_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	battle_rounds_id int UNSIGNED not null,
 	battle_id int unsigned not null,
 	player_id int unsigned not null,
 	warrior_id int unsigned not null,

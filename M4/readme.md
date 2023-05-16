@@ -21,5 +21,8 @@ Instruccions per veure el registre de batalles en format html:
 7-Dins d'aquest terminal executem:
   ->  'python3 -m http.server'
   
-8-Obrir 'localhost:8000/html/battle.html' al navegador.
+  En cas de que no funcioni provem executar la seguent:
+  ->  py -m http.server 7777  
+  
+8-Obrir 'localhost:8000/html/battle.html' al navegador(o localhost:7777 depenent del pas 7).
  

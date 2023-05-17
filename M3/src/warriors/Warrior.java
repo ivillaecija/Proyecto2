@@ -74,6 +74,10 @@ public abstract class Warrior {
 	public void setHumano(boolean humano) {
 		this.humano = humano;
 	}
+	
+	public void recuperarVida() {
+		
+	}
 	@Override
 	public String toString() {
 		return "Warrior [id=" + id + ", nom=" + nom + ", puntsDeVida=" + puntsDeVida + ", fuerza=" + fuerza

@@ -11,4 +11,7 @@ public class Nan extends Warrior{
 		this.setDefensa(4);
 		this.setUrl(url);
 	}
+	public void recuperarVida() {
+		setPuntsDeVida(60);
+	}
 }

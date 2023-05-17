@@ -11,4 +11,8 @@ public class Elf extends Warrior{
 		this.setDefensa(2);
 		this.setUrl(url);
 	}
+	
+	public void recuperarVida() {
+		setPuntsDeVida(40);
+	}
 }

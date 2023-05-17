@@ -11,4 +11,7 @@ public class Huma extends Warrior{
 		this.setDefensa(3);
 		this.setUrl(url);
 	}
+	public void recuperarVida() {
+		setPuntsDeVida(50);
+	}
 }

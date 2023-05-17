@@ -39,8 +39,9 @@ public class IniciarArmasPersonaje {
 		Weapon armaEnemigo = lista.get(indiceAleatorioWeapon);
 		enemigo.setArma(armaEnemigo);
 		return enemigo;
-
 	}
+	
+	
 
 	public ArrayList<Weapon> comprobarCompatibilidadDeArma(Warrior luchador) {
 		ConnectionBBDD con = new ConnectionBBDD();

@@ -20,4 +20,33 @@ en la icone de executar, amb això ja haurem creat i configurat la BBDD.
 
 **PROGRAMA**
 ___________________________________________________________________________________________________________________________________
-Per inicar el joc tindrem que descarregar primer de tot l'eclipse
+Per inicar el joc tindrem que descarregar primer de tot l'eclipse(https://www.eclipse.org/downloads/packages/), una veagada 
+descarregat l'inicem, dins d'aquest seleccionem file > import > directory i seleccionem la carpeta 'programa' resultant de 
+descomprimir 'programa.zip' dins de la release. Una vegada hem importat el programa tindrem que seleccionar el projecte, fer 
+click dret i seleccionar Build Path > configure build path > add external JARs, seleccionar el arxiu 'mysql-connector' dins de la 
+release i aplicar els canvis. Una vegada fet aixó tindrem que anar al package ConnexionBBDD i canviar la linea 23, en compte de 1234 
+posarem la contrasenya que hem configurat en la connexio del mysql. I per últim quan ja hem fet això anirem al package InterfazGrafica
+i seleccionarem el fitxer.java ubicat en aquest, una vegada seleccionat farem click sobre la icona de executar. Amb aixó ja hauriem
+iniciat el joc.
+
+
+**PAGINA WEB BATALLES**
+1-Descarregar la carpeta de M4
+2-Obrir un terminal o un cmd depenent del nostre SO (cmd -> Windows | terminal -> Linux), com a root o administradors
+
+3-Descarregar el mysql-connector executant les seguents comandes depenent del nostre SO: 
+WINDOWS -> 'py -m pip install mysql-connector-python' LINUX -> 'apt-get install python3-pip' i després 
+'pip install mysql-connector-python'
+
+4-Descarregar el lxml executant les seguents comandes depenent del nostre SO: WINDOWS -> 'py -m pip install lxml' 
+LINUX -> 'pip install lxml'
+
+5-Anar al directori on tenim carpeta descarregada 'M4' i actualitzar els fitxers xml i html amb les dades de la BBDD: WINDOWS -> 'dataToXML.py' i després 'xmlToHtml.py' LINUX -> 'python3 dataToXML.py' i després 'python3 xmlToHtml.py'
+
+6-Ara tindrem que obrir la carpeta 'M4' al programa Visual Studio Code, dins d'aquest seleccionar 'terminal' -> 'new terminal'.
+
+7-Dins d'aquest terminal executem: -> 'python3 -m http.server'
+
+En cas de que no funcioni provem executar la seguent: -> py -m http.server 7777
+
+8-Obrir 'localhost:8000/html/battle.html' al navegador(o localhost:7777 depenent del pas 7).

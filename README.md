@@ -44,8 +44,7 @@ LINUX -> 'pip install lxml'
 4-Anar al directori on tenim carpeta descarregada 'web'(cd directori) i actualitzar els fitxers xml i html amb les dades de la 
 BBDD: WINDOWS -> 'dataToXML.py' i després 'xmlToHtml.py' LINUX -> 'python3 dataToXML.py' i després 'python3 xmlToHtml.py'
 
-6-Ara tindrem que obrir la carpeta 'web' al programa Visual Studio Code(https://code.visualstudio.com/download), dins d'aquest 
-seleccionar 'terminal' -> 'new terminal'.
+6-Ara tindrem que obrir la carpeta 'web' al programa Visual Studio Code(https://code.visualstudio.com/download), dins d'aquest tindrem que editar la part on surt '1234' per la contrasenya que haguem configurat a la connexio mysql, despres hem de seleccionar 'terminal' -> 'new terminal'.
 
 7-Dins d'aquest terminal executem: -> 'python3 -m http.server'
 
